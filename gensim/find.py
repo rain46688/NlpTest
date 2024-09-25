@@ -14,13 +14,13 @@ warnings.filterwarnings(action='ignore', category=UserWarning, module='openpyxl'
 config = configparser.ConfigParser()
 config.read('./config.ini')
 
-aws_access_key_id = config['AWS']['aws_access_key_id'].strip()
-aws_secret_access_key = config['AWS']['aws_secret_access_key'].strip()
+id = config['AWS']['aws_access_key_id'].strip()
+key = config['AWS']['aws_secret_access_key'].strip()
 region_name = config['AWS']['region_name'].strip()
 bucket_name = config['AWS']['bucket_name'].strip()
 
 # S3 클라이언트 설정
-s3 = boto3.client('s3', aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key, region_name=region_name)
+s3 = boto3.client('s3', aws_access_key_id=id, aws_secret_access_key=key, region_name=region_name)
 
 # 버킷에서 모든 객체를 가져옵니다.
 response = s3.list_objects(Bucket=bucket_name, Prefix='useLog/release/')

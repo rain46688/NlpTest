@@ -10,8 +10,8 @@ warnings.filterwarnings(action='ignore', category=UserWarning, module='openpyxl'
 config = configparser.ConfigParser()
 config.read('./config.ini')
 
-aws_access_key_id = config['AWS']['aws_access_key_id'].strip()
-aws_secret_access_key = config['AWS']['aws_secret_access_key'].strip()
+id = config['AWS']['aws_access_key_id'].strip()
+key = config['AWS']['aws_secret_access_key'].strip()
 region_name = config['AWS']['region_name'].strip()
 bucket_name = config['AWS']['bucket_name'].strip()
 
