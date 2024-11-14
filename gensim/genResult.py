@@ -24,7 +24,7 @@ w2v_model = Word2Vec(
     sentences=documents,
     vector_size=100,     # 벡터 크기 (100 ~ 300)
     window=5,            # 컨텍스트 윈도우 크기 (5 ~ 10)
-    min_count=2,         # 최소 단어 빈도수 (1 ~ 5)
+    min_count=3,         # 최소 단어 빈도수 (1 ~ 5)
     workers=4,           # 병렬 처리 스레드 수 (4 ~ 8)
     epochs=100           # 학습 에폭 수 (10 ~ 100)
 )
